@@ -155,6 +155,14 @@ __Note__: JSON datatype doesn't exists in SQLite adapter, that's why you can use
 
 Open your model file and mount the uploader:
 
+You need to write (mount_uploaders) in your model not (mount_uploder) as here you need to add multiple files so you must write
+
+```ruby
+class User < ActiveRecord::Base
+  mount_uploaders :avatars, AvatarUploader
+end
+```
+###If you use SQLite you need to write the following 
 
 ```ruby
 class User < ActiveRecord::Base
